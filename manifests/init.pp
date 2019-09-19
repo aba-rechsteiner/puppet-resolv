@@ -10,6 +10,7 @@ class resolv (
   $config_dir_recurse       = true,
   $config_dir_source        = undef,
 
+  $config_file              = 'present'
   $config_file_path         = $::resolv::params::config_file_path,
   $config_file_owner        = $::resolv::params::config_file_owner,
   $config_file_group        = $::resolv::params::config_file_group,
@@ -60,7 +61,7 @@ class resolv (
     $config_file_ensure = 'absent'
   } else {
     $config_dir_ensure  = 'directory'
-    $config_file_ensure = 'present'
+    $config_file_ensure = $config_file
   }
 
   validate_re($config_dir_ensure, '^(absent|directory)$')
