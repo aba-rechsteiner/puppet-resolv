@@ -11,6 +11,7 @@ class resolv (
   $config_dir_source        = undef,
 
   $config_file_path         = $::resolv::params::config_file_path,
+  $config_file_force        = $::resolv::params::config_file_force,
   $config_file_owner        = $::resolv::params::config_file_owner,
   $config_file_group        = $::resolv::params::config_file_group,
   $config_file_mode         = $::resolv::params::config_file_mode,
