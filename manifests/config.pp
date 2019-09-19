@@ -17,7 +17,6 @@ class resolv::config {
     file { 'resolv.conf':
       ensure  => $::resolv::config_file_ensure,
       path    => $::resolv::config_file_path,
-      force   => $::resolv::config_file_force,
       owner   => $::resolv::config_file_owner,
       group   => $::resolv::config_file_group,
       mode    => $::resolv::config_file_mode,

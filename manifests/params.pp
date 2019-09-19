@@ -17,10 +17,6 @@ class resolv::params {
     default => '/etc/resolv.conf',
   }
 
-  $config_file_force = $::osfamily ? {
-    default => false,
-  }
-
   $config_file_owner = $::osfamily ? {
     default => 'root',
   }
