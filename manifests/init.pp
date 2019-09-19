@@ -10,7 +10,7 @@ class resolv (
   $config_dir_recurse       = true,
   $config_dir_source        = undef,
 
-  $config_file              = 'present'
+  $config_file              = 'present',
   $config_file_path         = $::resolv::params::config_file_path,
   $config_file_owner        = $::resolv::params::config_file_owner,
   $config_file_group        = $::resolv::params::config_file_group,
@@ -65,7 +65,7 @@ class resolv (
   }
 
   validate_re($config_dir_ensure, '^(absent|directory)$')
-  validate_re($config_file_ensure, '^(absent|present)$')
+  validate_re($config_file_ensure, '^(absent|present|file)$')
 
   anchor { 'resolv::begin': } ->
   class { '::resolv::install': } ->
